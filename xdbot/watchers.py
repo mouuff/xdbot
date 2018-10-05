@@ -25,6 +25,12 @@ class WatcherFindAndClickBase(WatcherBase):
             auto.click(x, y)
 
 
+class WatcherBanChampion(WatcherBase):
+    def update(self):
+        # TODO
+        pass
+
+
 class WatcherFindAndAccept(WatcherFindAndClickBase):
 
     def _get_image_to_find(self):
