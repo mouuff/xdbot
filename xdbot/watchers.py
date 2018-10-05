@@ -15,23 +15,31 @@ class WatcherBase:
 class WatcherFindAndClickBase(WatcherBase):
 
     @abstractmethod
-    def _get_image_to_find(self):
+    def _get_res_to_find(self):
         pass
 
+    def click(self, x, y):
+        auto.click(x, y)
+
     def update(self):
-        pos = auto.locateCenterOnScreen(self._get_image_to_find(), minSearchTime=100)
+        pos = misc.locate_on_screen(self._get_res_to_find())
         if pos is not None:
             x, y = pos
-            auto.click(x, y)
+            self.click(x, y)
 
 
-class WatcherBanChampion(WatcherBase):
-    def update(self):
-        # TODO
-        pass
+class WatcherBanChampion(WatcherFindAndClickBase):
+    def _get_res_to_find(self):
+        return misc.get_resource("test.png")
+
+    def click(self, x, y):
+        print("found")
+        ban = misc.locate_on_screen("bannissez.png")
+        if ban is not None:
+            super().click(x, y)
+            auto.typewrite("morgana")
 
 
 class WatcherFindAndAccept(WatcherFindAndClickBase):
-
-    def _get_image_to_find(self):
-        return misc.get_resource("accepter.png")
+    def _get_res_to_find(self):
+        return "accepter.png"

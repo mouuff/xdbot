@@ -1,13 +1,14 @@
 import time
-from .watchers import WatcherFindAndAccept
+from .watchers import WatcherFindAndAccept, WatcherBanChampion
 
 
 class Manager:
-    def __init__(self, interval=500):
+    def __init__(self, interval=0.1):
         self._running = False
         self._interval = interval
         self._watchers = [
-            WatcherFindAndAccept(self)
+            WatcherFindAndAccept(self),
+            WatcherBanChampion(self),
         ]
 
     def mainloop(self):
