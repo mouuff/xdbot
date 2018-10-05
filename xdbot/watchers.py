@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 import pyautogui as auto
 from . import misc
+from .constants import Constants
 
 
-class WatcherBase:
+class WatcherBase(ABC):
     def __init__(self, manager):
         self.manager = manager
 
@@ -30,16 +31,15 @@ class WatcherFindAndClickBase(WatcherBase):
 
 class WatcherBanChampion(WatcherFindAndClickBase):
     def _get_res_to_find(self):
-        return misc.get_resource("rechercher_ban.png")
+        return Constants.RES_FIND_BAN
 
     def click(self, x, y):
-        print("found")
-        ban = misc.locate_on_screen("bannissez.png")
+        ban = misc.locate_on_screen(Constants.RES_TITLE_BAN)
         if ban is not None:
             super().click(x, y)
-            auto.typewrite("morgana")
+            auto.typewrite("morgana")  # test wip
 
 
 class WatcherFindAndAccept(WatcherFindAndClickBase):
     def _get_res_to_find(self):
-        return "accepter.png"
+        return Constants.RES_ACCEPT_GAME
