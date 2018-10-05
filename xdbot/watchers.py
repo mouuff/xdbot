@@ -30,7 +30,7 @@ class WatcherFindAndClickBase(WatcherBase):
 
 class WatcherBanChampion(WatcherFindAndClickBase):
     def _get_res_to_find(self):
-        return misc.get_resource("test.png")
+        return misc.get_resource("rechercher_ban.png")
 
     def click(self, x, y):
         print("found")
