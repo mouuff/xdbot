@@ -1,5 +1,5 @@
 import time
-from .states import WatcherFindAccept
+from .watchers import WatcherFindAndAccept
 
 
 class Manager:
@@ -7,7 +7,7 @@ class Manager:
         self._running = False
         self._interval = interval
         self._watchers = [
-            WatcherFindAccept(self)
+            WatcherFindAndAccept(self)
         ]
 
     def mainloop(self):
