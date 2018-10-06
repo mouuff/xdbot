@@ -46,7 +46,7 @@ class WatcherFindAndClickBase(WatcherBase):
 
 class WatcherLockBanChampion(WatcherFindAndClickBase):
     def _get_res_to_find(self):
-        return Constants.RES_LOCK_PICK
+        return Constants.RES_LOCK_BAN
 
 
 class WatcherFindAndAccept(WatcherFindAndClickBase):
