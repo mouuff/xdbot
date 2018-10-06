@@ -59,7 +59,7 @@ class WatcherBanChampion(WatcherFindAndClickBase):
         return Constants.RES_FIND_BAN
 
     def _found_res(self, x, y):
-        ban = misc.locate_on_screen(Constants.RES_TITLE_BAN)
-        if ban is not None:
-            super()._found_res(x, y)  # click on find ban bar
-            auto.typewrite("morgana")  # test wip
+        # ban = misc.locate_on_screen(Constants.RES_TITLE_BAN)
+        # if ban is not None:
+        super()._found_res(x, y)  # click on find ban bar
+        auto.typewrite("morgana")  # test wip
