@@ -11,6 +11,7 @@ quail.run(
         name='xdbot',
         icon='xdbot.exe',
         binary='xdbot.exe',
+        publisher="xdbot",
         console=False,
         launch_with_quail=True
     ),
