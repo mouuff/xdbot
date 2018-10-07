@@ -13,7 +13,7 @@ def get_resource(file):
         return os.path.join("res", file)
 
 
-def locate_on_screen(image, minSearchTime=1):
+def locate_on_screen(image, minSearchTime=2):
     if not os.path.isfile(image):
         image = get_resource(image)
     print("LOCATING: %s" % image)

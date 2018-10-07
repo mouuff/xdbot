@@ -8,7 +8,7 @@ class Manager:
         self._interval = interval
         watcher_args = (self, interval)
         self._watchers = [
-            WatcherFindAndAccept(self, interval=1),
+            WatcherFindAndAccept(self, interval=2),
             # WatcherBanChampion(*watcher_args),
             # WatcherLockBanChampion(*watcher_args),
         ]
