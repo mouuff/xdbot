@@ -1,5 +1,5 @@
 import time
-from .watchers import WatcherFindAndAccept, WatcherBanChampion, WatcherLockBanChampion
+from .watchers import WatcherFindAndAccept, WatcherFindCrossAndClose, WatcherBanChampion, WatcherLockBanChampion
 
 
 class Manager:
@@ -9,6 +9,7 @@ class Manager:
         watcher_args = (self, interval)
         self._watchers = [
             WatcherFindAndAccept(self, interval=2),
+            WatcherFindCrossAndClose(self, interval=2),
             # WatcherBanChampion(*watcher_args),
             # WatcherLockBanChampion(*watcher_args),
         ]

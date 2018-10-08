@@ -5,3 +5,4 @@ class Constants:
     RES_LOCK_BAN = "lock_ban.png"
     RES_LOCK_PICK = "lock_pick.png"
     RES_TITLE_BAN = "title_ban.png"
+    RES_CROSS = "cross.png"

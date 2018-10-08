@@ -54,6 +54,11 @@ class WatcherFindAndAccept(WatcherFindAndClickBase):
         return Constants.RES_ACCEPT_GAME
 
 
+class WatcherFindCrossAndClose(WatcherFindAndClickBase):
+    def _get_res_to_find(self):
+        return Constants.RES_CROSS
+
+
 class WatcherBanChampion(WatcherFindAndClickBase):
     def _get_res_to_find(self):
         return Constants.RES_FIND_BAN
