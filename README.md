@@ -1,6 +1,6 @@
 # xdbot
 
-Download latest version [here](https://github.com/mouuff/xdbot/releases/download/1.0/xdbot.exe)
+Download latest version [here](https://github.com/mouuff/xdbot/releases/download/1.2/xdbot.exe)
 
 
 If your game is not in French, change the image in:
