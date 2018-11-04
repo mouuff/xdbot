@@ -34,19 +34,14 @@ class WatcherFindAndClickBase(WatcherBase):
     def _get_res_to_find(self):
         pass
 
-    def _found_res(self, x, y):
+    def _click(self, x, y):
         auto.click(x, y)
 
     def _update(self):
         pos = misc.locate_on_screen(self._get_res_to_find())
         if pos is not None:
             x, y = pos
-            self._found_res(x, y)
-
-
-class WatcherLockBanChampion(WatcherFindAndClickBase):
-    def _get_res_to_find(self):
-        return Constants.RES_LOCK_BAN
+            self._click(x, y)
 
 
 class WatcherFindAndAccept(WatcherFindAndClickBase):
@@ -58,13 +53,3 @@ class WatcherFindCrossAndClose(WatcherFindAndClickBase):
     def _get_res_to_find(self):
         return Constants.RES_CROSS
 
-
-class WatcherBanChampion(WatcherFindAndClickBase):
-    def _get_res_to_find(self):
-        return Constants.RES_FIND_BAN
-
-    def _found_res(self, x, y):
-        # ban = misc.locate_on_screen(Constants.RES_TITLE_BAN)
-        # if ban is not None:
-        super()._found_res(x, y)  # click on find ban bar
-        auto.typewrite("morgana")  # test wip
