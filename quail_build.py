@@ -3,7 +3,7 @@
 import iquail
 
 if not iquail.helper.OS_WINDOWS:
-    raise AssertionError("This test solution is windows only")
+    raise AssertionError("This solution is windows only")
 
 
 class FrameSelectMiniOrFull(iquail.controller_tkinter.FrameBaseConfigure):
